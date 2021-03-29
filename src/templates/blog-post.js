@@ -1,50 +1,15 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { withPrefix, Link, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const loadAPOD = () => {
-    const date = new Date();
-    const today = date.toISOString().split("T")[0]
-    const key = "APOD_RESULT";
-    const last = localStorage.getItem(key);
-    const lastJson = last ? JSON.parse(last) : undefined;
-
-    function renderImg(json) {
-        // Fallback on Jupiter if the media_type is not an image.
-        var src = json.media_type === "image" ?
-            json.url :
-            "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22949.jpg";
-        var container = document.getElementById("nasa-img-container");
-        if (!container) {
-            console.log("#nasa-img-container is missing!");
-            return;
-        }
-        if (container.childElementCount) { return; }
-        var img = document.createElement('img');
-        img.src = src;
-        container.title = json.explanation;
-        container.appendChild(img);
-        localStorage.setItem(key, JSON.stringify(json));
-    }
-
-    if (!lastJson || lastJson.date !== today) {
-        fetch("https://api.nasa.gov/planetary/apod?api_key=5VhLWB6JaWs6m11mLfrNKply8naxchfbWb0Nu2Q9")
-            .then((response) => response.json())
-            .then(renderImg);
-    } else {
-        renderImg(lastJson);
-    }
-}
-
 const BlogPostTemplate = ({ data, location }) => {
     const post = data.markdownRemark
     const siteTitle = data.site.siteMetadata?.title || `Title`
     const { previous, next } = data
-
-    loadAPOD();
 
     return (
         <Layout location={location} title={siteTitle}>
@@ -99,6 +64,9 @@ const BlogPostTemplate = ({ data, location }) => {
                     </li>
                 </ul>
             </nav>
+            <Helmet>
+                <script src={withPrefix('site.js')} type="text/javascript" />
+            </Helmet>
         </Layout>
     )
 }
