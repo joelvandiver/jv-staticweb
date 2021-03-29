@@ -1,7 +1,7 @@
 ---
-title: SQL SERVER on Docker (Round 2)
+title: SQL SERVER on Docker with SQLCMD
 date: "2020-08-02"
-description: "Dockerize SQL SERVER!"
+description: "Dockerize SQL SERVER with SQLCMD!"
 ---
 
 Let's revisit a previous [post](/2019-12-07-docker-sql-server/) about using Docker to create a SQL SERVER image.  Previously, I connected to the DB with SQL SERVER Management Studio (SSMS), but now, I'd like to use `sqlcmd` to avoid running other tools.

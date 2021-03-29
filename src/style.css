@@ -333,5 +333,6 @@ a:focus {
 }
 
 #nasa-img-container img {
+    margin: 0 0 var(--spacing-2) 0;
     width: 100%;
 }
