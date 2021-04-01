@@ -11,7 +11,7 @@ Enter `git` to the rescue.  I typically follow the 'git flow' workflow.  Also, o
 The script below hinges on the following git command:
 
 ```
-git diff --name-only HEAD~0 HEAD~100
+git diff --name-only HEAD~0 HEAD~1
 ```
 
 Here's a `pwsh` script to get you started.  Enjoy!
