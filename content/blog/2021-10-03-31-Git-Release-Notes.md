@@ -34,7 +34,7 @@ $releaseNotes += "> $date`n`n"
 
 
 # Get the file changes in the last commit
-git diff --name-only HEAD~0 HEAD~100 |
+git diff --name-only HEAD~0 HEAD~1 |
 ForEach-Object {
     $title = $_
     $exists = $False
