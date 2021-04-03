@@ -4,7 +4,7 @@ date: "2021-03-31"
 description: "Adding Simple Git Release Notes to Your CI"
 ---
 
-The problem often arises in software engineer to capture release notes for your end users.  The situation quickly complicates because the notion of "end users" changes per environment.  The developers may be using a DEV environment while the QA may be using another.  And, then you may need another UAT environment with the primary stake holders.  Each of these environments should have a some form of documentation for the release.  
+The problem often arises in software engineering to capture release notes for your end users.  The situation quickly complicates because the notion of "end users" changes per environment.  The developers may be using a DEV environment while the QA may be using another.  And, then you may need another UAT environment with the primary stake holders.  Each of these environments should have a some form of documentation for the release.  
 
 Enter `git` to the rescue.  I typically follow the 'git flow' workflow.  Also, over time I have begun to use `rebase` with `squash` instead of a simple `merge` to keep the commit log clean.  With this workflow, it is very easy to setup a simple CI job that logs the changes from git since the last commit.  
 
