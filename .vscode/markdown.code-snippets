@@ -1,0 +1,15 @@
+{
+	"post": {
+		"prefix": "post",
+		"body": [
+            "---",
+            "title: $1",
+            "date: 2021-06-$2",
+            "description: $3",
+            "---",
+            "",
+            "$0"
+		],
+		"description": "Creates a post from template"
+	}
+}
