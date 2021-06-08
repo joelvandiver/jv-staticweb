@@ -7,9 +7,6 @@ module.exports = {
         },
         description: `This is my place for sharing ideas, growing, and improving.`,
         siteUrl: `https://joelvandiver.com/`,
-        social: {
-            twitter: `joelvandiver`,
-        },
     },
     plugins: [
         `gatsby-plugin-image`,
